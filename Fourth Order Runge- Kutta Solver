@@ -1,0 +1,21 @@
+def rk4(t0, t, y0, step):
+    iterations=round((t-t0)/step)
+    
+    y=y0 #initial y value
+    y_data=[y0]
+    t_data=[t0]
+    
+    for n in range(iterations):
+        k1= step * diff_equ(t0, y)
+        k2= step * diff_equ(t0 + (0.5 * step), y + (0.5 * k1))
+        k3= step * diff_equ(t0 + (0.5 * step), y + (0.5 * k2))
+        k4= step * diff_equ(t0 + step, y + k3)
+
+        y= y + ((k1 + 2*k2 + 2*k3 + k4) / 6) #Estimate of next y value
+        
+        t0= t0 + step #Moves t to next value
+        
+        y_data.append(y)
+        t_data.append(t0)
+        
+    return t_data, y_data #For plotting purposes
