@@ -19,3 +19,5 @@ def rk2(t0, t, y0, step):
     return t_data, y_data #Returns lists for plotting purposes 
 
 # If an approximate value of y is needed at some t simply replace the last three line of code with 'return y' 
+
+#Note: Calls on seperate function 'diff_equ'
