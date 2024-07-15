@@ -19,3 +19,5 @@ def rk4(t0, t, y0, step):
         t_data.append(t0)
         
     return t_data, y_data #For plotting purposes
+
+#Note: Calls on seperate function 'diff_equ'
